@@ -65,7 +65,7 @@ def desanonymize_file(source_path, output_path, pseudonym_map_path):
 
 print("loading spaCy...")
 try:
-    nlp = spacy.load("pt_core_news_sm")
+    nlp = spacy.load("pt_core_news_lg")
 except OSError:
     print("Error: cant find this spacy model!")
     exit()
@@ -89,7 +89,7 @@ if __name__ == "__main__":
         f.write(result.text_content)
     print(f"Sucesso! Arquivo bruto salvo em {md_file}")
 
-    print(f"\n[PASSO 2] Aplicando filtro de privacidade com spaCy...")
+    print(f"\nAplicando filtro de privacidade com spaCy...")
     anonymize_file(
         source_path=md_file, 
         output_path=anonymized_file,
